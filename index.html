@@ -359,6 +359,8 @@ main{flex:1;padding:18px;max-width:1500px;width:100%;margin:0 auto}
 .legal{margin-top:16px;padding:14px 18px;text-align:center;color:var(--muted);font-size:.75rem;line-height:1.6}
 .legal b{color:var(--ink)}
 .legal .sig{font-size:.9rem;font-weight:800;color:var(--accent-ink)}
+.sig-hand{font-family:'Segoe Script','Brush Script MT','Lucida Handwriting','Snell Roundhand',cursive;font-style:italic;font-weight:600;font-size:1.25rem;letter-spacing:1px;margin-left:4px;vertical-align:baseline}
+.legal .ver{font-size:.72rem;color:var(--muted);margin-top:2px}
 /* Impression */
 @media print{
   body{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
@@ -673,7 +675,11 @@ main{flex:1;padding:18px;max-width:1500px;width:100%;margin:0 auto}
       </ul>
       <h2 id="g12"><span class="num">12</span>À propos et mentions légales</h2>
       <p><b>À propos</b> : Mon Calendrier Pro est une application <b>gratuite, qui doit le rester</b>. Elle tient dans un seul fichier, fonctionne sans compte, sans abonnement et sans envoyer la moindre donnée sur Internet. Le projet est hébergé sur GitHub : <span class="kbd">https://github.com/KamaOne/mon-calendrier-pro</span>. Chacun peut y <b>comprendre son fonctionnement</b>, <b>proposer des améliorations</b> ou <b>signaler un défaut ou une faille de sécurité</b> (onglet « Issues » du dépôt) : toute proposition retenue est intégrée et créditée, avec l'accord écrit de l'auteur.</p>
-      <p>Calendrier créé par <b>KamaOne</b>, signature <b>SG</b>. Application gratuite : elle doit rester gratuite. Toute reproduction, modification ou commercialisation, totale ou partielle, sans l'accord écrit préalable de l'auteur est interdite (Code de la propriété intellectuelle, art. L.122-4 et L.335-2). Filigrane discret apposé sur toutes les feuilles.</p>
+      <div style="border:1.5px solid var(--line);border-radius:12px;padding:12px 16px;margin:12px 0;background:#f8fafc">
+        <h3 style="font-size:.95rem;margin:0 0 8px">📖 Journal des mises à jour</h3>
+        <p style="margin:0;font-size:.9rem;color:#334155"><b>Version 1.0 — 14 novembre 2026</b> : première version officielle. Elle comprend la sécurité renforcée (code PIN protégé, blocage progressif après erreurs, verrouillage automatique, sauvegardes chiffrées), le QR code d'installation vérifié, l'affichage paysage confortable sur téléphone et le « SG » manuscrit en écriture cursive.</p>
+      </div>
+      <p>Calendrier créé par <b>KamaOne</b> — <b>SG</b>. Application gratuite : elle doit rester gratuite. Toute reproduction, modification ou commercialisation, totale ou partielle, sans l'accord écrit préalable de l'auteur est interdite (Code de la propriété intellectuelle, art. L.122-4 et L.335-2). Filigrane discret apposé sur toutes les feuilles.</p>
     </div>
     <!-- Avertissement PUIS case à cocher PUIS bouton Valider, en bas du guide -->
     <div class="guide-validate">
@@ -750,7 +756,8 @@ main{flex:1;padding:18px;max-width:1500px;width:100%;margin:0 auto}
     <section id="view-stats" class="sheet hidden"></section>
   </main>
   <footer class="legal">
-    <div class="sig">Créé par KamaOne — Signature : SG</div>
+    <div class="sig">Créé par KamaOne — <span class="sig-hand">SG</span></div>
+    <div class="ver">Version 1.0 — 14 novembre 2026</div>
     <div><b>© 2027-2051 KamaOne. Tous droits réservés.</b></div>
     <div>Conformément au Code de la propriété intellectuelle (art. L.112-2, L.122-4 et L.335-2), toute reproduction, représentation, modification, publication ou commercialisation de ce calendrier, totale ou partielle, sans l'accord écrit préalable de l'auteur, est strictement interdite et constitue une contrefaçon.</div>
   </footer>
@@ -3531,6 +3538,6 @@ function syncSettingsUI(){
 }
 init();
 </script>
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" nonce="cwTCRESzjrVv7RN+BD4prA==" data-cf-beacon='{"version":"2024.11.0","token":"36b4216ae2dc4d5488c249161e71fe1e","spa":2}' crossorigin="anonymous"></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" nonce="JHvCIsHh8sdb2UllA1bocw==" data-cf-beacon='{"version":"2024.11.0","token":"36b4216ae2dc4d5488c249161e71fe1e","spa":2}' crossorigin="anonymous"></script>
 </body>
 </html>
