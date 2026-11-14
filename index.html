@@ -474,7 +474,7 @@ main{flex:1;padding:18px;max-width:1500px;width:100%;margin:0 auto}
     </div>
     <div class="guide-body" id="guideBody">
       <div class="guide-toc" id="guideToc">
-        <a href="#g1">1. Sécurité</a> · <a href="#g2">2. Les vues</a> · <a href="#g3">3. Rendez-vous</a> · <a href="#g4">4. Travail de nuit</a> · <a href="#g5">5. Vacances scolaires</a> · <a href="#g6">6. Fériés, lunes, semaines</a> · <a href="#g7">7. Sauvegarde</a> · <a href="#g8">8. Notifications</a> · <a href="#g9">9. Personnalisation</a> · <a href="#g10">10. Impression</a> · <a href="#g11">11. Téléphone et partage</a> · <a href="#g12">12. Mentions légales</a>
+        <a href="#g1">1. Sécurité</a> · <a href="#g2">2. Les vues</a> · <a href="#g3">3. Rendez-vous</a> · <a href="#g4">4. Travail de nuit</a> · <a href="#g5">5. Vacances scolaires</a> · <a href="#g6">6. Fériés, lunes, semaines</a> · <a href="#g7">7. Sauvegarde</a> · <a href="#g8">8. Notifications</a> · <a href="#g9">9. Personnalisation</a> · <a href="#g10">10. Impression</a> · <a href="#g11">11. Téléphone et partage</a> · <a href="#g12">12. À propos et mentions légales</a>
       </div>
       <h2 id="g1"><span class="num">1</span>Sécurité et code PIN</h2>
       <p>Le calendrier s'ouvre en trois étapes : <b>code PIN</b> → <b>mode d'emploi</b> → <b>calendrier</b>.</p>
@@ -484,6 +484,9 @@ main{flex:1;padding:18px;max-width:1500px;width:100%;margin:0 auto}
         <li>Pour modifier ou supprimer votre code : <span class="kbd">🎨 Personnaliser</span> → onglet <span class="kbd">Sécurité</span>.</li>
         <li><b>Code de récupération</b> : à la création du code PIN, un code de <b>12 caractères</b> (ex. K7P2-M9X4-AB3C) vous est remis une seule fois — <b>notez-le en lieu sûr</b>. Après <b>3 erreurs de code PIN</b>, l'application vous propose de déverrouiller avec ce code de récupération. Après <b>3 erreurs</b> sur le code de récupération, il ne reste qu'une solution : créer un <b>nouveau code PIN</b> avec un <b>nouveau code de récupération</b> — l'ancien code PIN et l'ancien code de récupération sont alors <b>définitivement supprimés</b> de la mémoire de l'application (vos données sont conservées).</li>
         <li>Modifier le code PIN ou cliquer <span class="kbd">🔑 Générer un nouveau code de récupération</span> (onglet Sécurité) efface toujours l'ancien code de récupération et en affiche un nouveau, une seule fois.</li>
+        <li><b>Hachage renforcé</b> : votre code PIN n'est jamais stocké en clair. Il est protégé par un hachage salé étiré sur <b>15 000 tours</b> : même en copiant le fichier de données, il est très long à retrouver.</li>
+        <li><b>Blocage progressif</b> : après chaque série de <b>3 erreurs</b>, l'application impose une attente croissante : <b>30 s</b>, puis <b>2 min</b>, <b>5 min</b>, <b>15 min</b>. Le compte à rebours s'affiche à l'écran.</li>
+        <li><b>Verrouillage automatique</b> : si un code PIN est actif, l'application se verrouille seule après <b>1 minute</b> d'inactivité (modifiable : Personnaliser → Sécurité → 1, 5, 10 minutes ou Jamais).</li>
       </ul>
       <h2 id="g2"><span class="num">2</span>Les vues : quotidien, hebdomadaire, mensuel, annuel, agenda</h2>
       <ul>
@@ -541,6 +544,7 @@ main{flex:1;padding:18px;max-width:1500px;width:100%;margin:0 auto}
       <ul>
         <li><b>Sauvegarde automatique</b> : chaque création ou modification est enregistrée instantanément dans votre navigateur. L'heure de la dernière sauvegarde s'affiche dans la barre d'outils.</li>
         <li><b>Sauvegarde JSON</b> (<span class="kbd">💾</span>) : télécharge un fichier contenant rendez-vous, anniversaires, gardes et réglages. Il sert à <b>changer d'ordinateur</b> ou à <b>récupérer vos données après un crash</b>. Restaurez avec <span class="kbd">📥</span> (import).</li>
+        <li><b>Sauvegarde chiffrée</b> : le bouton <span class="kbd">💾</span> vous propose d'entrer un <b>mot de passe</b> ; le fichier exporté est alors chiffré (AES-GCM) et <b>illisible sans ce mot de passe</b>. Laissez vide pour un fichier classique. ⚠️ Mot de passe oublié = fichier définitivement illisible, personne ne peut le récupérer.</li>
         <li><b>✅ La méthode simple (recommandée) : sauvegarde directe sur votre carte micro SD</b> : une carte micro SD s'utilise exactement comme une clé USB, branchée dans le pc ou via un adaptateur.
           <br>1. Mettez la carte dans le pc (fente SD de l'ordinateur ou adaptateur USB).
           <br>2. <b>Une seule fois</b> : dans votre navigateur, réglez l'emplacement des téléchargements sur la carte (Chrome ou Edge : menu ⋮ → <b>Paramètres</b> → <b>Téléchargements</b> → choisissez la carte SD). C'est la seule « manipulation » à faire, une fois pour toutes.
@@ -593,8 +597,9 @@ main{flex:1;padding:18px;max-width:1500px;width:100%;margin:0 auto}
         <li><b>🤝 Partager avec vos amis</b> : envoyez-leur simplement l'adresse ci-dessus (message, email…) ou montrez-leur le QR code. Chacun obtient <b>son propre calendrier vierge</b> : vos données et les leurs restent chez chacun, rien n'est partagé ni envoyé sur Internet.</li>
         <li><b>✈️ Hors connexion</b> : après une première ouverture avec internet, le calendrier s'ouvre aussi <b>sans connexion</b> (il reste stocké dans l'appareil). Vos données, elles, sont toujours enregistrées uniquement dans l'appareil.</li>
       </ul>
-      <h2 id="g12"><span class="num">12</span>Mentions légales</h2>
-      <p>Calendrier créé par <b>KamaOne</b>, signature <b>SG</b>. Toute reproduction, modification ou commercialisation, totale ou partielle, sans l'accord écrit préalable de l'auteur est interdite (Code de la propriété intellectuelle, art. L.122-4 et L.335-2). Filigrane discret apposé sur toutes les feuilles.</p>
+      <h2 id="g12"><span class="num">12</span>À propos et mentions légales</h2>
+      <p><b>À propos</b> : Mon Calendrier Pro est une application <b>gratuite, qui doit le rester</b>. Elle tient dans un seul fichier, fonctionne sans compte, sans abonnement et sans envoyer la moindre donnée sur Internet. Le projet est hébergé sur GitHub : <span class="kbd">https://github.com/KamaOne/mon-calendrier-pro</span>. Chacun peut y <b>comprendre son fonctionnement</b>, <b>proposer des améliorations</b> ou <b>signaler un défaut ou une faille de sécurité</b> (onglet « Issues » du dépôt) : toute proposition retenue est intégrée et créditée, avec l'accord écrit de l'auteur.</p>
+      <p>Calendrier créé par <b>KamaOne</b>, signature <b>SG</b>. Application gratuite : elle doit rester gratuite. Toute reproduction, modification ou commercialisation, totale ou partielle, sans l'accord écrit préalable de l'auteur est interdite (Code de la propriété intellectuelle, art. L.122-4 et L.335-2). Filigrane discret apposé sur toutes les feuilles.</p>
     </div>
     <!-- Avertissement PUIS case à cocher PUIS bouton Valider, en bas du guide -->
     <div class="guide-validate">
@@ -846,6 +851,14 @@ main{flex:1;padding:18px;max-width:1500px;width:100%;margin:0 auto}
           <div class="field"><label>Confirmation</label><input type="password" id="secNew2" autocomplete="new-password"></div>
         </div>
         <div class="pin-actions"><button class="btn btn-primary" id="secChange">✔ Modifier le code</button><button class="btn btn-soft-danger" id="secRemove">🔓 Supprimer la protection</button></div>
+        <div class="field" style="margin-top:12px"><label>🔒 Verrouillage automatique (si un code PIN est actif)</label>
+          <select id="secAutoLock">
+            <option value="1">Après 1 minute</option>
+            <option value="5">Après 5 minutes</option>
+            <option value="10">Après 10 minutes</option>
+            <option value="0">Jamais</option>
+          </select>
+        </div>
         <hr style="margin:14px 0;border:none;border-top:1.5px solid var(--line)">
         <p class="hint" style="margin-bottom:10px">🔑 <b>Code de récupération</b> : créé en même temps que le code PIN (12 caractères). Après <b>3 erreurs de PIN</b>, il déverrouille le calendrier ; après <b>3 erreurs</b> aussi, il faut créer un nouveau code PIN et un nouveau code de récupération (les anciens sont supprimés). Le code n'est jamais re-affiché : régénérez-le si besoin.</p>
         <div class="pin-actions" style="margin-bottom:10px"><button class="btn btn-ghost" id="secRegenRec">🔑 Générer un nouveau code de récupération</button></div>
@@ -1196,6 +1209,58 @@ function sha256(ascii){
   return result;
 }
 function hashPin(code, salt){ return sha256(salt + "|" + code); }
+/* ==== Sécurité renforcée : hachage ralenti (15 000 tours) + blocage progressif ==== */
+const PIN_ROUNDS = 15000;
+function hashPinV2(code, salt, rounds){
+  rounds = rounds || PIN_ROUNDS;
+  let h = sha256(salt + "|" + code);
+  for (let i = 1; i < rounds; i++) h = sha256(salt + "|" + h);
+  return h;
+}
+function verifyPinCode(code){
+  if (!state.pin || !state.pin.hash) return false;
+  if (state.pin.v === 2) return hashPinV2(code, state.pin.salt, state.pin.rounds || PIN_ROUNDS) === state.pin.hash;
+  return hashPin(code, state.pin.salt) === state.pin.hash; // ancien format, encore accepté puis converti
+}
+function verifyRecCode(v){
+  if (!state.pin || !state.pin.recHash) return false;
+  if (state.pin.recV === 2) return hashPinV2(v, state.pin.recSalt, state.pin.recRounds || PIN_ROUNDS) === state.pin.recHash;
+  return hashPin(v, state.pin.recSalt) === state.pin.recHash;
+}
+function migratePinIfNeeded(enteredCode){
+  // convertit silencieusement un ancien code PIN (hachage simple) vers le format renforcé
+  const p = state.pin;
+  if (p && p.hash && p.v !== 2 && enteredCode){
+    p.v = 2; p.rounds = PIN_ROUNDS; p.hash = hashPinV2(enteredCode, p.salt, PIN_ROUNDS); saveState();
+  }
+}
+const PIN_COOLDOWNS = [30, 120, 300, 900]; // secondes de blocage croissant
+function pinLockGet(){ try { return JSON.parse(localStorage.getItem(STORE_KEY + "-pinlock")) || {until: 0, fails: 0}; } catch(e){ return {until: 0, fails: 0}; } }
+function pinLockSet(o){ try { localStorage.setItem(STORE_KEY + "-pinlock", JSON.stringify(o)); } catch(e){} }
+function pinLockClear(){ pinLockSet({until: 0, fails: 0}); }
+function pinLockCheck(){ const o = pinLockGet(); return Date.now() < o.until ? o : null; }
+function pinLockRemaining(){ const o = pinLockGet(); return Math.max(0, Math.ceil((o.until - Date.now()) / 1000)); }
+let pinLockTimer = null;
+function startPinLockTicker(){
+  if (pinLockTimer) return;
+  pinLockTimer = setInterval(() => {
+    if (!pinLockCheck()){
+      clearInterval(pinLockTimer); pinLockTimer = null;
+      const m = $("pinEntryMsg"); if (m) m.textContent = "";
+      const rm = $("recEntryMsg"); if (rm) rm.textContent = "";
+      return;
+    }
+    const m = $("pinEntryMsg");
+    if (m){ m.textContent = "⏳ Trop d'essais : nouvelle tentative dans " + pinLockRemaining() + " s."; m.style.color = "var(--danger)"; }
+  }, 1000);
+}
+function pinLockBump(){
+  const o = pinLockGet(); o.fails++;
+  const tier = Math.min(Math.ceil(o.fails / 3), PIN_COOLDOWNS.length);
+  o.until = Date.now() + PIN_COOLDOWNS[tier - 1] * 1000;
+  pinLockSet(o); startPinLockTicker();
+  return o.until;
+}
 /* ================= Etat & stockage ================= */
 const DEFAULT_STATE = {
   version: 1,
@@ -1203,7 +1268,7 @@ const DEFAULT_STATE = {
   usesWithoutPin: 0,
   guideAccepted: false,
   settings: {
-    night: false, zone: "A", zoneA: true, zoneB: true, zoneC: true, appName: "Mon Calendrier Pro",
+    night: false, zone: "A", zoneA: true, zoneB: true, zoneC: true, appName: "Mon Calendrier Pro", autoLock: 1,
     accent: "#2563eb", palette: [],
     notifOn: false, remindMin: 15,
     schoolCustom: []
@@ -1344,6 +1409,26 @@ function updateFileSyncUI(){
     ? "🔗 Fichier lié : " + (fileHandle.name || "sauvegarde-calendrier.json") + " — écriture automatique à chaque modification."
     : "Aucun fichier lié. La sauvegarde reste disponible via 💾 (export) et 📥 (import).";
 }
+
+  // === Verrouillage automatique ===
+  let lastActivity = Date.now();
+  function autoLockMinutes(){ const v = state && state.settings && state.settings.autoLock; return (typeof v === "number" && v >= 0) ? v : 1; }
+  function touchActivity(){ lastActivity = Date.now(); }
+  function setupAutoLock(){
+    ["pointerdown","keydown","wheel"].forEach(ev => document.addEventListener(ev, touchActivity, { capture: true, passive: true }));
+    setInterval(() => {
+      if (!state || !state.pin || !state.pin.hash) return;
+      const mins = autoLockMinutes(); if (mins === 0) return;
+      const pinScreen = $("pinScreen"), appScreen = $("appScreen");
+      if (!pinScreen || pinScreen.style.display !== "none") { lastActivity = Date.now(); return; }
+      if (!appScreen || appScreen.style.display === "none") return;
+      if (Date.now() - lastActivity > mins * 60000) {
+        lastActivity = Date.now();
+        showPinEntry();
+        toast("🔒 Verrouillage automatique après " + mins + " minute(s) d'inactivité.");
+      }
+    }, 5000);
+  }
 
 function loadState(){
   try {
@@ -1504,11 +1589,61 @@ function exportJSON(){
   toast("💾 Sauvegarde JSON téléchargée. Conservez-la en lieu sûr (clé USB, cloud).", "ok");
   updateFeu();
 }
+/* ==== Sauvegardes chiffrées (AES-GCM 256 + PBKDF2, natif du navigateur) ==== */
+function subtleOK(){
+  return typeof crypto !== "undefined" && !!(crypto.subtle && typeof TextEncoder !== "undefined" && typeof btoa === "function" && typeof atob === "function");
+}
+function b64FromBytes(buf){ const u = new Uint8Array(buf); let s = ""; for (let i = 0; i < u.length; i++) s += String.fromCharCode(u[i]); return btoa(s); }
+function bytesFromB64(b){ const s = atob(b); const u = new Uint8Array(s.length); for (let i = 0; i < s.length; i++) u[i] = s.charCodeAt(i); return u; }
+async function deriveBackupKey(pwd, saltBytes){
+  const km = await crypto.subtle.importKey("raw", new TextEncoder().encode(pwd), {name: "PBKDF2"}, false, ["deriveKey"]);
+  return crypto.subtle.deriveKey({name: "PBKDF2", salt: saltBytes, iterations: 150000, hash: "SHA-256"}, km, {name: "AES-GCM", length: 256}, false, ["encrypt", "decrypt"]);
+}
+async function encryptBackupText(text, pwd){
+  const salt = crypto.getRandomValues(new Uint8Array(16));
+  const iv = crypto.getRandomValues(new Uint8Array(12));
+  const key = await deriveBackupKey(pwd, salt);
+  const ct = await crypto.subtle.encrypt({name: "AES-GCM", iv: iv}, key, new TextEncoder().encode(text));
+  return JSON.stringify({app: "kamaone-calendrier-pro", encrypted: true, cipher: "AES-GCM-256", kdf: "PBKDF2-SHA256-150000", v: 1, salt: b64FromBytes(salt), iv: b64FromBytes(iv), data: b64FromBytes(ct)});
+}
+async function decryptBackupText(payload, pwd){
+  const key = await deriveBackupKey(pwd, bytesFromB64(payload.salt));
+  const pt = await crypto.subtle.decrypt({name: "AES-GCM", iv: bytesFromB64(payload.iv)}, key, bytesFromB64(payload.data));
+  return new TextDecoder().decode(pt);
+}
+function exportDialog(){
+  confirmDialog("💾 Sauvegarde JSON",
+    "Protégez la sauvegarde par un <b>mot de passe</b> (recommandé si elle part sur une carte micro SD ou une clé USB) : le fichier sera alors <b>illisible sans ce mot de passe</b>.<br>Laissez le champ vide pour une sauvegarde classique, non chiffrée." +
+    "<div class='field' style='margin-top:12px'><label>Mot de passe (optionnel)</label><input type='password' id='encPwd' autocomplete='new-password' placeholder='Ex : MaSauvegarde2026!'></div>" +
+    "<p class='hint'>⚠️ Attention : un mot de passe oublié rend la sauvegarde définitivement illisible.</p>",
+    [["💾 Sauvegarder", () => { const el = $("encPwd"); exportDialogGo(el ? el.value : ""); }, "btn-primary"], ["Annuler", null, "btn-ghost"]]);
+}
+async function exportDialogGo(pwd){
+  if (pwd && !subtleOK()){ toast("Le chiffrement n'est pas disponible dans ce navigateur : sauvegarde non chiffrée.", "warn", 7000); pwd = ""; }
+  if (pwd){
+    try {
+      const plain = JSON.stringify({app: "kamaone-calendrier-pro", version: 1, exportedAt: new Date().toISOString(), state}, null, 2);
+      const enc = await encryptBackupText(plain, pwd);
+      state.lastExport = Date.now(); flushSave();
+      download("mon-calendrier-pro-sauvegarde-" + stamp() + ".json", enc, "application/json");
+      toast("🔒 Sauvegarde chiffrée téléchargée : illisible sans votre mot de passe.", "ok", 7000);
+      updateFeu();
+    } catch(e){ toast("Échec du chiffrement : sauvegarde annulée.", "danger", 6000); }
+  } else exportJSON();
+}
 function importJSONFile(file){
   const reader = new FileReader();
   reader.onload = () => {
+    let data = null;
+    try { data = JSON.parse(reader.result); } catch(e){ data = null; }
+    if (data && data.encrypted === true && data.data && data.salt && data.iv){
+      confirmDialog("🔐 Sauvegarde protégée",
+        "Cette sauvegarde est <b>chiffrée</b>. Entrez son mot de passe pour la lire." +
+        "<div class='field' style='margin-top:12px'><label>Mot de passe de la sauvegarde</label><input type='password' id='decPwd' autocomplete='off'></div>",
+        [["🔓 Déverrouiller", () => { const el = $("decPwd"); importEncryptedGo(data, el ? el.value : ""); }, "btn-primary"], ["Annuler", null, "btn-ghost"]]);
+      return;
+    }
     try {
-      const data = JSON.parse(reader.result);
       if (!data || data.app !== "kamaone-calendrier-pro" || !data.state) throw new Error("bad");
       confirmDialog("📥 Restaurer la sauvegarde",
         "Cette opération remplace TOUTES les données actuelles par celles du fichier. Voulez-vous continuer ?<br><br><b>💡 Conseil : exportez d'abord vos données actuelles (💾).</b>",
@@ -1518,6 +1653,19 @@ function importJSONFile(file){
     } catch(e){ toast("Fichier invalide : choisissez une sauvegarde JSON créée par ce calendrier.", "danger", 6000); }
   };
   reader.readAsText(file);
+}
+async function importEncryptedGo(payload, pwd){
+  if (!pwd){ toast("Entrez le mot de passe de la sauvegarde.", "warn"); return; }
+  try {
+    const plain = await decryptBackupText(payload, pwd);
+    const data = JSON.parse(plain);
+    if (!data || data.app !== "kamaone-calendrier-pro" || !data.state) throw new Error("bad");
+    confirmDialog("📥 Restaurer la sauvegarde (déchiffrée)",
+      "Mot de passe correct. Cette opération remplace TOUTES les données actuelles par celles du fichier. Voulez-vous continuer ?",
+      [["💾 Exporter puis remplacer", () => { exportJSON(); doImport(data.state); }, "btn-primary"],
+       ["📥 Remplacer maintenant", () => doImport(data.state), "btn-ghost"],
+       ["Annuler", null, "btn-ghost"]]);
+  } catch(e){ toast("❌ Mot de passe incorrect ou fichier endommagé.", "danger", 6000); }
 }
 function doImport(st){
   state = Object.assign(structuredCloneish(DEFAULT_STATE), st);
@@ -2913,7 +3061,7 @@ function pinSaveClicked(){
   if (v !== v2){ toast("Les deux codes ne correspondent pas.", "warn"); return; }
   // nouveau PIN + nouveau code de récupération (l'ancien couple, s'il existe, est écrasé)
   const salt = uid(), recSalt = uid(), rec = genRecCode();
-  state.pin = {hash: hashPin(v, salt), salt, recHash: hashPin(normRecCode(rec), recSalt), recSalt};
+  state.pin = {v: 2, rounds: PIN_ROUNDS, hash: hashPinV2(v, salt, PIN_ROUNDS), salt, recV: 2, recRounds: PIN_ROUNDS, recHash: hashPinV2(normRecCode(rec), recSalt, PIN_ROUNDS), recSalt};
   state.usesWithoutPin = 0;
   saveState();
   toast("🔐 Code PIN créé.", "ok");
@@ -2926,14 +3074,17 @@ function recDoneClicked(){
   else afterPin();
 }
 function pinUnlockClicked(){
+  const lk = pinLockCheck();
+  if (lk){ $("pinEntryMsg").textContent = "⏳ Trop d'essais : nouvelle tentative dans " + pinLockRemaining() + " s."; $("pinEntryMsg").style.color = "var(--danger)"; startPinLockTicker(); return; }
   const v = $("pinEntry").value;
-  if (v && hashPin(v, state.pin.salt) === state.pin.hash){ pinErrCount = 0; recErrCount = 0; afterPin(); }
+  if (v && verifyPinCode(v)){ pinErrCount = 0; recErrCount = 0; pinLockClear(); migratePinIfNeeded(v); afterPin(); }
   else {
     pinErrCount++;
     if (pinErrCount >= 3){
       pinErrCount = 0;
       $("pinEntryMsg").textContent = "";
-      toast("✖ 3 erreurs de code PIN. Utilisez votre code de récupération.", "warn", 6000);
+      const until = pinLockBump();
+      toast("✖ 3 erreurs de code PIN. Nouvelle tentative dans " + Math.ceil((until - Date.now())/1000) + " s ; ou utilisez votre code de récupération.", "warn", 7000);
       showRecEntry();
     } else {
       $("pinEntryMsg").textContent = "✖ Code incorrect (" + pinErrCount + "/3). Réessayez.";
@@ -2944,8 +3095,10 @@ function pinUnlockClicked(){
   }
 }
 function recUnlockClicked(){
+  const lk = pinLockCheck();
+  if (lk){ $("recEntryMsg").textContent = "⏳ Trop d'essais : nouvelle tentative dans " + pinLockRemaining() + " s."; $("recEntryMsg").style.color = "var(--danger)"; startPinLockTicker(); return; }
   const v = normRecCode($("recEntry").value);
-  if (v && state.pin.recHash && hashPin(v, state.pin.recSalt) === state.pin.recHash){
+  if (v && verifyRecCode(v)){
     pinErrCount = 0; recErrCount = 0;
     toast("🔓 Calendrier déverrouillé avec le code de récupération.", "ok", 6000);
     afterPin();
@@ -2997,6 +3150,7 @@ function refreshSecurityTab(){
   const has = !!state.pin.hash;
   $("secHasPin").classList.toggle("hidden", !has);
   $("secNoPin").classList.toggle("hidden", has);
+  $("secAutoLock").value = String(autoLockMinutes());
 }
 
 /* ================= Entrée dans l'application ================= */
@@ -3044,6 +3198,7 @@ function init(){
   selDate = clampYear(selDate);
   if (serverMode) toast("🔄 Mode synchronisé : chaque modification est enregistrée dans donnees.json sur la clé USB / le disque externe.", "ok", 9000);
   loadLinkedFileAtStart();
+  setupAutoLock();
   // Version en ligne (https) : service worker pour l'ouverture hors connexion (fichier sw.js a cote du HTML)
   try {
     if (typeof navigator !== "undefined" && "serviceWorker" in navigator && typeof location !== "undefined" && location.protocol === "https:") {
@@ -3121,7 +3276,7 @@ function init(){
     else if (e.key === "Escape"){ brandEditCancel = true; commitBrandEdit(); }
   });
   $("brandEdit").addEventListener("blur", () => { brandEditCancel = false; commitBrandEdit(); });
-  $("btnSave").onclick = exportJSON;
+  $("btnSave").onclick = exportDialog;
   $("btnImport").onclick = () => $("fileImport").click();
   $("fileImport").onchange = (e) => { if (e.target.files[0]) importJSONFile(e.target.files[0]); e.target.value = ""; };
   $("btnIcs").onclick = exportICS;
@@ -3188,14 +3343,19 @@ function init(){
 
   // Onglet sécurité
   $("secCreate").onclick = () => { closeOverlay("settingsOverlay"); showPinCreate(false, true); };
+  $("secAutoLock").onchange = () => {
+    const v = Number($("secAutoLock").value) || 0;
+    state.settings.autoLock = v; saveState();
+    toast(v === 0 ? "🔒 Verrouillage automatique désactivé." : "🔒 Verrouillage automatique : " + v + " minute(s) d'inactivité.", "ok");
+  };
   $("secChange").onclick = () => {
     const oldv = $("secOld").value, n1 = $("secNew").value, n2 = $("secNew2").value;
-    if (hashPin(oldv, state.pin.salt) !== state.pin.hash){ toast("Code PIN actuel incorrect.", "danger"); return; }
+    if (verifyPinCode(oldv) !== true){ toast("Code PIN actuel incorrect.", "danger"); return; }
     const c = pinChecks(n1);
     if (!Object.values(c).every(Boolean)){ toast("Le nouveau code doit respecter toutes les règles (majuscule, minuscule, chiffre, spécial, 8 min).", "warn", 6000); return; }
     if (n1 !== n2){ toast("La confirmation ne correspond pas.", "warn"); return; }
     const salt = uid(), recSalt = uid(), rec = genRecCode();
-    state.pin = {hash: hashPin(n1, salt), salt, recHash: hashPin(normRecCode(rec), recSalt), recSalt};
+    state.pin = {v: 2, rounds: PIN_ROUNDS, hash: hashPinV2(n1, salt, PIN_ROUNDS), salt, recV: 2, recRounds: PIN_ROUNDS, recHash: hashPinV2(normRecCode(rec), recSalt, PIN_ROUNDS), recSalt};
     saveState();
     $("secOld").value = ""; $("secNew").value = ""; $("secNew2").value = "";
     $("secRecText").textContent = rec;
@@ -3206,7 +3366,7 @@ function init(){
     "Un nouveau code de récupération sera généré et l'ancien sera <b>définitivement supprimé</b>. Le nouveau code ne sera plus jamais affiché : notez-le immédiatement.",
     [["🔄 Générer", () => {
       const recSalt = uid(), rec = genRecCode();
-      state.pin.recHash = hashPin(normRecCode(rec), recSalt); state.pin.recSalt = recSalt;
+      state.pin.recHash = hashPinV2(normRecCode(rec), recSalt, PIN_ROUNDS); state.pin.recV = 2; state.pin.recRounds = PIN_ROUNDS; state.pin.recSalt = recSalt;
       saveState();
       $("secRecText").textContent = rec;
       $("secRecWrap").classList.remove("hidden");
@@ -3231,7 +3391,7 @@ function init(){
     saveState(); renderBdList(); render(); $("bdName").value = ""; $("bdDate").value = "";
     toast("🎂 Anniversaire ajouté : visible chaque année dans toutes les vues.", "ok");
   };
-  $("btnSave2").onclick = exportJSON;
+  $("btnSave2").onclick = exportDialog;
   $("btnImport2").onclick = () => { closeOverlay("settingsOverlay"); $("fileImport").click(); };
   $("btnReset").onclick = () => confirmDialog("⚠️ Réinitialiser le calendrier ?",
     "Tous les rendez-vous, anniversaires, gardes et réglages seront <b>définitivement effacés</b>. Exportez d'abord une sauvegarde si besoin.",
@@ -3297,6 +3457,6 @@ function syncSettingsUI(){
 }
 init();
 </script>
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" nonce="FGPyr6EkB2EeA4fUS1tEGA==" data-cf-beacon='{"version":"2024.11.0","token":"36b4216ae2dc4d5488c249161e71fe1e","spa":2}' crossorigin="anonymous"></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" nonce="j7Kb5W1N2FbFw1CpDEbQng==" data-cf-beacon='{"version":"2024.11.0","token":"36b4216ae2dc4d5488c249161e71fe1e","spa":2}' crossorigin="anonymous"></script>
 </body>
 </html>
